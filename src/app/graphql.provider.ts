@@ -1,5 +1,6 @@
 import { ApplicationConfig, inject } from "@angular/core";
-import { ApolloClientOptions, InMemoryCache } from "@apollo/client/core";
+import { ApolloClientOptions, ApolloLink, InMemoryCache } from "@apollo/client/core";
+import { setContext } from "@apollo/client/link/context";
 import { Apollo, APOLLO_OPTIONS } from "apollo-angular";
 import { HttpLink } from "apollo-angular/http";
 
@@ -8,26 +9,34 @@ export const githubData = {
   username: "3gwebtrain",
 };
 
-//const uri = "https://countries.trevorblades.com/graphql"; // <-- add the URL of the GraphQL server here
-const uri = "https://api.github.com/graphql"; // <-- add the URL of the GraphQL server here
+const uri = "https://api.github.com/graphql";
 
-const header = {
-  "Content-Type": "application/json",
-  Authorization: "bearer " + githubData["token"],
-};
+const header = setContext((operation, context) => ({
+  headers: {
+    Accept: "charset=utf-8",
+  },
+}));
+
+const auth = setContext((operation, context) => {
+  const token = localStorage.getItem("token");
+
+  if (token === null) {
+    return {};
+  } else {
+    return {
+      headers: {
+        Authorization: "bearer " + githubData["token"],
+      },
+    };
+  }
+});
 
 export function apolloOptionsFactory(): ApolloClientOptions<any> {
   const httpLink = inject(HttpLink);
+  const link = ApolloLink.from([header, auth, httpLink.create({ uri })]);
   return {
-    link: httpLink.create({ uri }),
-    headers: header,
-    credentials: "include",
+    link: link,
     cache: new InMemoryCache(),
-    defaultOptions: {
-      watchQuery: {
-        errorPolicy: "all",
-      },
-    },
   };
 }
 

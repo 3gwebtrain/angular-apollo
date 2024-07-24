@@ -11,11 +11,8 @@ import { GitServiceService } from "./services/git-service.service";
 })
 export class AppComponent implements OnInit {
   gitService = inject(GitServiceService);
-  constructor() {}
-
   ngOnInit(): void {
-    this.gitService.getGitData();
+    console.log("Hellow there");
+    this.gitService.watch().valueChanges.subscribe((data) => console.log("data", data));
   }
-
-  getCountries() {}
 }
