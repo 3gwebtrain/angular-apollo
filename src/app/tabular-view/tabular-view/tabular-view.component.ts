@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { SharedModule } from "./../../shared/shared.module";
 
 @Component({
-  selector: 'app-tabular-view',
+  selector: "app-tabular-view",
   standalone: true,
-  imports: [],
-  templateUrl: './tabular-view.component.html',
-  styleUrl: './tabular-view.component.scss'
+  imports: [SharedModule],
+  templateUrl: "./tabular-view.component.html",
+  styleUrl: "./tabular-view.component.scss",
 })
-export class TabularViewComponent {
-
-}
+export class TabularViewComponent {}

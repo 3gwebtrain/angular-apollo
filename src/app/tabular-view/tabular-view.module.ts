@@ -1,14 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
 
-import { TabularViewRoutingModule } from './tabular-view-routing.module';
-
+import { TabularViewRoutingModule } from "./tabular-view-routing.module";
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    TabularViewRoutingModule
-  ]
+  imports: [CommonModule, TabularViewRoutingModule],
 })
-export class TabularViewModule { }
+export class TabularViewModule {}

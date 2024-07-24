@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
+import { GitServiceService } from "./services/git-service.service";
 @Component({
   selector: "app-root",
   standalone: true,
@@ -8,4 +9,13 @@ import { RouterOutlet } from "@angular/router";
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  gitService = inject(GitServiceService);
+  constructor() {}
+
+  ngOnInit(): void {
+    this.gitService.getGitData();
+  }
+
+  getCountries() {}
+}
