@@ -5,11 +5,11 @@ import { Apollo, APOLLO_OPTIONS } from "apollo-angular";
 import { HttpLink } from "apollo-angular/http";
 
 export const githubData = {
-  token: "removed get it",
+  token: "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",
   username: "3gwebtrain",
 };
 
-const uri = "removed";
+const uri = "https://api.github.com/graphql";
 
 const header = setContext((operation, context) => ({
   headers: {
