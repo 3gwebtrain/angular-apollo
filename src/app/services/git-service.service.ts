@@ -7,12 +7,14 @@ import { gql, Query } from "apollo-angular";
 export class GitServiceService extends Query<Response> {
   document = gql`
     query {
-      user(login: "3gwebtrain") {
-        issues(first: 10) {
+      user(login: "kentcdodds") {
+        repositories(first: 100) {
+          totalCount
           nodes {
-            title
-            body
-            closedAt
+            nameWithOwner
+            stargazers(first: 50) {
+              totalCount
+            }
           }
         }
       }

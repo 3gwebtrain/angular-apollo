@@ -5,7 +5,7 @@ import { Apollo, APOLLO_OPTIONS } from "apollo-angular";
 import { HttpLink } from "apollo-angular/http";
 
 export const githubData = {
-  token: "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",
+  token: "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",
   username: "3gwebtrain",
 };
 
@@ -18,17 +18,11 @@ const header = setContext((operation, context) => ({
 }));
 
 const auth = setContext((operation, context) => {
-  const token = localStorage.getItem("token");
-
-  if (token === null) {
-    return {};
-  } else {
-    return {
-      headers: {
-        Authorization: "bearer " + githubData["token"],
-      },
-    };
-  }
+  return {
+    headers: {
+      Authorization: "bearer " + githubData["token"],
+    },
+  };
 });
 
 export function apolloOptionsFactory(): ApolloClientOptions<any> {
