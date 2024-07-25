@@ -20,7 +20,7 @@ const header = setContext((operation, context) => ({
 const auth = setContext((operation, context) => {
   return {
     headers: {
-      Authorization: "bearer " + githubData["token"],
+      Authorization: "Bearer " + githubData["token"],
     },
   };
 });
