@@ -18,17 +18,11 @@ const header = setContext((operation, context) => ({
 }));
 
 const auth = setContext((operation, context) => {
-  const token = localStorage.getItem("token");
-
-  if (token === null) {
-    return {};
-  } else {
-    return {
-      headers: {
-        Authorization: "bearer " + githubData["token"],
-      },
-    };
-  }
+  return {
+    headers: {
+      Authorization: "bearer " + githubData["token"],
+    },
+  };
 });
 
 export function apolloOptionsFactory(): ApolloClientOptions<any> {
