@@ -1,7 +1,7 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, signal } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
-import { GitServiceService } from "./services/git-service.service";
+import { GitService } from "./services/git-service";
 @Component({
   selector: "app-root",
   standalone: true,
@@ -10,9 +10,9 @@ import { GitServiceService } from "./services/git-service.service";
   styleUrl: "./app.component.scss",
 })
 export class AppComponent implements OnInit {
-  gitService = inject(GitServiceService);
+  gitService = inject(GitService);
+  repos = signal(["aaa", "bb"]);
   ngOnInit(): void {
-    console.log("Hellow there");
-    this.gitService.watch().valueChanges.subscribe((data) => console.log("data", data));
+    // this.gitService.loadAllRepositories().pipe(map(({ data }: any) => this.repos.set(data)));
   }
 }

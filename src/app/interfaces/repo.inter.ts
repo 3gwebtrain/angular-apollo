@@ -6,8 +6,14 @@ export type RepoNode = {
 };
 
 export type Repo = {
-  repositories: {
-    totalCount: number;
-    nodes: RepoNode[];
+  totalCount: number;
+  nodes: RepoNode[];
+};
+
+export type RepoResponse = {
+  data: {
+    user: {
+      repositories: Repo[];
+    };
   };
 };

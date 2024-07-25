@@ -38,15 +38,12 @@ dependencies:
   '@apollo/client':
     specifier: ^3.0.0
     version: 3.11.0(graphql@16.9.0)
-  '@ngrx/effects':
+  '@ngrx/operators':
     specifier: 18.0.1
-    version: 18.0.1(@angular/core@18.1.1)(@ngrx/store@18.0.1)(rxjs@7.8.1)
+    version: 18.0.1(rxjs@7.8.1)
   '@ngrx/signals':
-    specifier: 18.0.0-rc.3
-    version: 18.0.0-rc.3(@angular/core@18.1.1)(rxjs@7.8.1)
-  '@ngrx/store':
-    specifier: 18.0.1
-    version: 18.0.1(@angular/core@18.1.1)(rxjs@7.8.1)
+    specifier: 17.2.0
+    version: 17.2.0(@angular/core@18.1.1)(rxjs@7.8.1)
   apollo-angular:
     specifier: 7.0.2
     version: 7.0.2(@angular/core@18.1.1)(@apollo/client@3.11.0)(graphql@16.9.0)(rxjs@7.8.1)
@@ -3159,20 +3156,6 @@ packages:
     dev: true
     optional: true
 
-  /@ngrx/effects@18.0.1(@angular/core@18.1.1)(@ngrx/store@18.0.1)(rxjs@7.8.1):
-    resolution: {integrity: sha512-ESxJYx31uABixtnWcuDY+HLKyqXKABpPG3LPDMyZrj7lIdjCaTk471QMhRZOme8QQKzlJt0drGfzFo3FM+QYuA==}
-    peerDependencies:
-      '@angular/core': ^18.0.0
-      '@ngrx/store': 18.0.1
-      rxjs: ^6.5.3 || ^7.5.0
-    dependencies:
-      '@angular/core': 18.1.1(rxjs@7.8.1)(zone.js@0.14.8)
-      '@ngrx/operators': 18.0.1(rxjs@7.8.1)
-      '@ngrx/store': 18.0.1(@angular/core@18.1.1)(rxjs@7.8.1)
-      rxjs: 7.8.1
-      tslib: 2.6.3
-    dev: false
-
   /@ngrx/operators@18.0.1(rxjs@7.8.1):
     resolution: {integrity: sha512-M+QMrHNKgcuiLaRGZxJ4aQi5/OCRfKC4+T/63dsHyLFZ53/FFpF6a/ytSO1Q+tzOplZ5o99S+i8FVaZqNQ3LmQ==}
     peerDependencies:
@@ -3182,25 +3165,14 @@ packages:
       tslib: 2.6.3
     dev: false
 
-  /@ngrx/signals@18.0.0-rc.3(@angular/core@18.1.1)(rxjs@7.8.1):
-    resolution: {integrity: sha512-OTMHO0ey9oeglImw5+6BbAUHNSebJk98mS9RnFRs6sj3AWA7TzgpWqWE8fyN2v/wEPnraR2jcSfuLxN02gp2vw==}
+  /@ngrx/signals@17.2.0(@angular/core@18.1.1)(rxjs@7.8.1):
+    resolution: {integrity: sha512-tkkxifeOVPOhpTqbHyK1WOx4qz49HLR/h0vhaa/MRGRIZoOR/6gR4KB3hbC8FD3FdnuNqOgOZ2lGsTfWPB/6BQ==}
     peerDependencies:
-      '@angular/core': ^18.0.0
+      '@angular/core': ^17.0.0
       rxjs: ^6.5.3 || ^7.4.0
     peerDependenciesMeta:
       rxjs:
         optional: true
-    dependencies:
-      '@angular/core': 18.1.1(rxjs@7.8.1)(zone.js@0.14.8)
-      rxjs: 7.8.1
-      tslib: 2.6.3
-    dev: false
-
-  /@ngrx/store@18.0.1(@angular/core@18.1.1)(rxjs@7.8.1):
-    resolution: {integrity: sha512-TxZiQz06fGSxQ0clYfzkH4NCr6tfa8A7zqzkvvOOK1ZezOHHsk0vZJJtgxQcKUqAQxPpbp5+Z7YR8P/Fuid7GQ==}
-    peerDependencies:
-      '@angular/core': ^18.0.0
-      rxjs: ^6.5.3 || ^7.5.0
     dependencies:
       '@angular/core': 18.1.1(rxjs@7.8.1)(zone.js@0.14.8)
       rxjs: 7.8.1

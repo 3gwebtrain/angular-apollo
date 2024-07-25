@@ -3,13 +3,7 @@ import { ApolloClientOptions, ApolloLink, InMemoryCache } from "@apollo/client/c
 import { setContext } from "@apollo/client/link/context";
 import { Apollo, APOLLO_OPTIONS } from "apollo-angular";
 import { HttpLink } from "apollo-angular/http";
-
-export const githubData = {
-  token: "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",
-  username: "3gwebtrain",
-};
-
-const uri = "https://api.github.com/graphql";
+import { environment } from "./../environments/environment.development";
 
 const header = setContext((operation, context) => ({
   headers: {
@@ -20,13 +14,14 @@ const header = setContext((operation, context) => ({
 const auth = setContext((operation, context) => {
   return {
     headers: {
-      Authorization: "Bearer " + githubData["token"],
+      Authorization: "Bearer " + environment.token,
     },
   };
 });
 
 export function apolloOptionsFactory(): ApolloClientOptions<any> {
   const httpLink = inject(HttpLink);
+  const uri = `${environment.apiRoot}`;
   const link = ApolloLink.from([header, auth, httpLink.create({ uri })]);
   return {
     link: link,
