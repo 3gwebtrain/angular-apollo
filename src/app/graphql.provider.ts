@@ -5,7 +5,7 @@ import { Apollo, APOLLO_OPTIONS } from "apollo-angular";
 import { HttpLink } from "apollo-angular/http";
 
 export const githubData = {
-  token: "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",
+  token: "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",
   username: "3gwebtrain",
 };
 
