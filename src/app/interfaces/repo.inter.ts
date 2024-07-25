@@ -1,8 +1,6 @@
 export type RepoNode = {
   nameWithOwner: string;
-  stargazers: {
-    totalCount: number;
-  };
+  stars: number;
 };
 
 export type Repo = {

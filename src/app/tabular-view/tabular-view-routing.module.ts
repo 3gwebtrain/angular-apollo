@@ -4,7 +4,7 @@ import { TabularGraphComponent } from "./tabular-graph/tabular-graph.component";
 import { TabularViewComponent } from "./tabular-view/tabular-view.component";
 
 const routes: Routes = [
-  { path: "", component: TabularViewComponent },
+  { path: "", pathMatch: "full", component: TabularViewComponent },
   { path: "graph", component: TabularGraphComponent },
 ];
 
