@@ -6,6 +6,7 @@ import { ColDef } from "ag-grid-community";
 import { RepoNode } from "../../interfaces/repo.inter";
 import { RepoStore } from "../../store/repo.store";
 import { SharedModule } from "./../../shared/shared.module";
+import { TabularButtonComponent } from "./button-view.component";
 
 @Component({
   selector: "app-tabular-view",
@@ -28,16 +29,11 @@ export class TabularViewComponent implements OnInit {
     await this.store.loadAll();
   }
 
-  callme(e: Event) {
-    e.preventDefault();
-    console.log("i am called");
-  }
-
   populateTable(): void {
     this.rowData = this.store.nodes();
     this.colDefs = [
       { field: "nameWithOwner", flex: 1 },
-      { field: "stars", flex: 1, cellRenderer: (param: string): string => `<a (click)="callme($event)">samples</a>` },
+      { field: "stars", flex: 1, cellRenderer: TabularButtonComponent },
     ];
   }
 }

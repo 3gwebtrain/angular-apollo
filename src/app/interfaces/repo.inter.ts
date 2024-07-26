@@ -6,6 +6,7 @@ export type RepoNode = {
 export type Repo = {
   totalCount: number;
   nodes: RepoNode[];
+  user: RepoNode;
 };
 
 export type RepoResponse = {

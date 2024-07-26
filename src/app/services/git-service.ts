@@ -1,14 +1,11 @@
 import { Injectable } from "@angular/core";
-import { ApolloQueryResult } from "@apollo/client/core";
+// import { ApolloQueryResult } from "@apollo/client/core";
 import { Apollo, gql } from "apollo-angular";
 import { BehaviorSubject } from "rxjs";
 import { environment } from "../../environments/environment.development";
-import { GET_REPOS } from "../graphql/graphql.queries";
+// import { GET_REPOS } from "../graphql/graphql.queries";
 
-type data = {
-  data: { user: { repositories: { totalCount: number; nodes: [] } } };
-};
-
+import { data } from "../../data/data";
 @Injectable({
   providedIn: "root",
 })
@@ -36,7 +33,9 @@ export class GitService {
 
   async loadAllRepositories(): Promise<any> {
     return new Promise((res, rej) => {
-      this.apollo.watchQuery({ query: GET_REPOS }).valueChanges.subscribe((data: ApolloQueryResult<any>) => res(data.data.user.repositories));
+      // this.apollo.watchQuery({ query: GET_REPOS }).valueChanges.subscribe((data: ApolloQueryResult<any>) => res(data.data.user.repositories));
+      // console.log(JSON.parse(data));
+      res(data.data.user.repositories);
     });
   }
 }
