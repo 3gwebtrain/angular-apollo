@@ -25,3 +25,27 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## from Mohamed Arif descriptions git https://github.com/3gwebtrain/angular-apollo/tree/backup
+
+what I used with this app:
+
+1. Used standalore components
+2. Used @ngrx/store
+3. d3.js
+4. Ag-Grid
+5. Apollo Angular
+
+Dynamic to static: Apollo Angular
+Since my Graphql api service keep on expires I have copied and pasted the dynamic data in to data.ts
+I have commented "loadAllRepositories()" dynamic data fetch. you can update the proper token in the environment dev file and check if it works
+
+D3.js : Used some static data to show case
+in graph page, I am getting "user" details and showing to update how we can set and get.
+But I did not used the real data here. Not able to fech all because of token expire and no time.
+
+Prop types - some where i missed to add prop types. But not it intensional
+Conditional check - conditional check not implemented since its the demo works
+Comments - self declarative or comments not added
+Test - test case not written[ I like jestjs]
+Styles - styles not considered. not styles written
